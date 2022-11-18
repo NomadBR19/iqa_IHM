@@ -10,16 +10,15 @@ double iqa::get_iqa()
     QJsonDocument documentJSON = QJsonDocument::fromJson(get(url));
 
     QJsonObject objetJSON = documentJSON.object();
-
-    if(objetJSON.value("aqi").isDouble())
-    {
-        aqi = objetJSON.value("aqi").toDouble();
-        return aqi;
-    }
-    else
-    {
-        return 0;
-    }
+    QJsonValue dataJSON = objetJSON.value("data");
+    if(objetJSON.value("data").toObject().value("aqi").isDouble())
+        {
+            return objetJSON.value("data").toObject().value("aqi").toDouble();
+        }
+        else
+        {
+            return 0;
+        }
 }
 
 QByteArray iqa::get(QUrl url)

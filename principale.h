@@ -2,6 +2,12 @@
 #define PRINCIPALE_H
 
 #include <QMainWindow>
+#include <QNetworkReply>
+#include <QNetworkAccessManager>
+#include <QNetworkRequest>
+#include <QUrl>
+#include <QtGui>
+#include <iqa.h>
 
 QT_BEGIN_NAMESPACE
 namespace Ui { class principale; }
@@ -17,5 +23,9 @@ public:
 
 private:
     Ui::principale *ui;
+    iqa afficheur;
+private slots:
+    void changer_url();
+    void affiche_iqa();
 };
 #endif // PRINCIPALE_H

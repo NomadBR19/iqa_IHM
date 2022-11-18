@@ -6,10 +6,21 @@ principale::principale(QWidget *parent)
     , ui(new Ui::principale)
 {
     ui->setupUi(this);
+    afficheur.set_url(ui->urlEdit->text());
 }
 
 principale::~principale()
 {
     delete ui;
+}
+
+void principale::affiche_iqa()
+{
+    double iqa = afficheur.get_iqa();
+    ui->iqaSpinBox->setValue(iqa);
+}
+void principale::changer_url()
+{
+    afficheur.set_url(ui->urlEdit->text());
 }
 

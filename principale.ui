@@ -20,21 +20,21 @@
       <x>20</x>
       <y>60</y>
       <width>151</width>
-      <height>41</height>
+      <height>48</height>
      </rect>
     </property>
     <layout class="QVBoxLayout" name="verticalLayout_2">
      <item>
       <widget class="QLabel" name="label">
        <property name="text">
-        <string>Url :</string>
+        <string>ville:</string>
        </property>
       </widget>
      </item>
      <item>
       <widget class="QLineEdit" name="urlEdit">
        <property name="text">
-        <string>https://api.waqi.info/feed/clermont-ferrand/?token=d9636de539c0cc32e3771e378fd51527b70526f1</string>
+        <string/>
        </property>
       </widget>
      </item>
@@ -46,7 +46,7 @@
       <x>190</x>
       <y>60</y>
       <width>121</width>
-      <height>41</height>
+      <height>49</height>
      </rect>
     </property>
     <layout class="QVBoxLayout" name="verticalLayout">
@@ -58,7 +58,17 @@
       </widget>
      </item>
      <item>
-      <widget class="QDoubleSpinBox" name="iqaSpinBox"/>
+      <widget class="QDoubleSpinBox" name="iqaSpinBox">
+       <property name="readOnly">
+        <bool>true</bool>
+       </property>
+       <property name="buttonSymbols">
+        <enum>QAbstractSpinBox::NoButtons</enum>
+       </property>
+       <property name="maximum">
+        <double>999.990000000000009</double>
+       </property>
+      </widget>
      </item>
     </layout>
    </widget>
@@ -68,7 +78,7 @@
       <x>320</x>
       <y>60</y>
       <width>161</width>
-      <height>41</height>
+      <height>48</height>
      </rect>
     </property>
     <layout class="QVBoxLayout" name="verticalLayout_3">

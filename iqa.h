@@ -21,7 +21,8 @@ public:
     iqa();
     void _aqi(int aqi);
     void set_url(QString url);
-    double get_iqa();
+    double get_iqa(QString ville, QString token);
+    QByteArray get_jiqa(QString ville,QString token);
 };
 
 #endif // IQA_H

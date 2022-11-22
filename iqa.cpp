@@ -4,9 +4,12 @@ iqa::iqa()
 {
 }
 
-double iqa::get_iqa()
+double iqa::get_iqa(QString ville, QString token)
 {
     QUrl url = qurl;
+    QString path = url.url() + "/feed/" + ville+ "/?token=" + token;
+    url = QUrl(path);
+
     QJsonDocument documentJSON = QJsonDocument::fromJson(get(url));
 
     QJsonObject objetJSON = documentJSON.object();
@@ -20,13 +23,19 @@ double iqa::get_iqa()
             return 0;
         }
 }
+QByteArray iqa::get_jiqa(QString ville, QString token)
+{
+    QUrl url = qurl;
+        QString path = url.url() + "/feed/" + ville + "/?token=d9636de539c0cc32e3771e378fd51527b70526f1";;
+        url = QUrl(path);
 
+        return get(url);
+}
 QByteArray iqa::get(QUrl url)
 {
 
     QNetworkRequest requete(url);
 
-    //Pour la gestion de la connexion sécurisée SSL (HTTPS)
     QSslConfiguration config = QSslConfiguration::defaultConfiguration();
     config.setProtocol(QSsl::TlsV1_2);
     requete.setSslConfiguration(config);

@@ -14,7 +14,7 @@ principale::~principale()
     delete ui;
 }
 
-void principale::affiche_iqa()
+void principale::iqa_afficher()
 {
     double iqa = afficheur.get_iqa();
     ui->iqaSpinBox->setValue(iqa);

@@ -26,10 +26,10 @@ QByteArray iqa::get(QUrl url)
 
     QNetworkRequest requete(url);
 
-//    //Pour la gestion de la connexion sécurisée SSL (HTTPS)
-//    QSslConfiguration config = QSslConfiguration::defaultConfiguration();
-//    config.setProtocol(QSsl::TlsV1_2);
-//    requete.setSslConfiguration(config);
+    //Pour la gestion de la connexion sécurisée SSL (HTTPS)
+    QSslConfiguration config = QSslConfiguration::defaultConfiguration();
+    config.setProtocol(QSsl::TlsV1_2);
+    requete.setSslConfiguration(config);
 
     QNetworkReply *reply = m.get(requete);
 

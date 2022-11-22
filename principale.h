@@ -26,6 +26,6 @@ private:
     iqa afficheur;
 private slots:
     void changer_url();
-    void affiche_iqa();
+    void iqa_afficher();
 };
 #endif // PRINCIPALE_H
